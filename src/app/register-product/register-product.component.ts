@@ -83,7 +83,7 @@ export class RegisterProductComponent implements OnInit {
   onSubmit() {
     this.onAddProduct();
     console.log(this.registerProdForm);
-    // this.registerProdForm.reset();
+    this.registerProdForm.reset();
   }
 
 }
