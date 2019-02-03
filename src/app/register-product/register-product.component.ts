@@ -1,7 +1,7 @@
 import { ProductsService } from './../services/products.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Observable } from 'rxjs';
+// import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-register-product',
@@ -12,15 +12,13 @@ export class RegisterProductComponent implements OnInit {
   registerProdForm: FormGroup;
 
   constructor(private productsService: ProductsService) { }
-  // products = [];
-
   products = [
     {
       product_id: this.generateId(),
       product_category: 'women',
       product_name: 'Ladies Suit',
       product_desc: 'This is a Cotton Suit for Ladies',
-      product_img: 'images/ladiesSuit.jpg',
+      product_img: '../../assets/images/ladiessuit.jpeg',
       product_alt: 'Ladies Suit Image',
       product_qty: 1,
       product_price: this.generatePrice(),
@@ -30,7 +28,7 @@ export class RegisterProductComponent implements OnInit {
       product_category: 'men',
       product_name: 'Suit',
       product_desc: 'This is a Suit for Men',
-      product_img: 'images/suit.jpg',
+      product_img: '../../assets/images/suit.jpeg',
       product_alt: 'Suit Image',
       product_qty: 1,
       product_price: this.generatePrice(),
@@ -82,8 +80,13 @@ export class RegisterProductComponent implements OnInit {
 
   onSubmit() {
     this.onAddProduct();
-    console.log(this.registerProdForm);
+    // console.log(this.registerProdForm);
     this.registerProdForm.reset();
   }
+
+  // menProducts() {
+  //   const menProducts = this.products.filter(product => product.product_category === 'men');
+  //   console.log(menProducts);
+  // }
 
 }
