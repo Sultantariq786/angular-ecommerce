@@ -1,10 +1,10 @@
 <div class="container">
     <div class="row">
-      <div class="col-xs-6 col-md-3 tile">
+      <div class="col-xs-6 col-md-3 tile" *ngFor="let product of kidsProducts">
         <a href="#" class="thumbnail">
-          <img src="images/kidsJeans.jpg" alt="Camera Image"><br>
-          <div class="product-name text-center">Kids Jeans</div><br>
-          <div class="product-price text-center"> ₹.750/-</div><br>
+          <img src="{{ product.product_img }}" alt="{{ product.product_alt }}"><br>
+          <div class="product-name text-center">{{ product.product_name }}</div><br>
+          <div class="product-price text-center"> ₹.{{ product.product_price }}/-</div><br>
         </a>
         <div class="form-group">
           <div class="input-group">
@@ -12,7 +12,7 @@
               <button class="btn btn-info removeBtn" type="button">
                 <span class="glyphicon glyphicon-minus"></span>
               </button></span>
-            <div class="quantityDiv text-center">1</div>
+            <div class="quantityDiv text-center">{{ product.product_qty }}</div>
             <span class="input-group-btn">
               <button class="btn btn-info addBtn" type="button">
                 <span class="glyphicon glyphicon-plus"></span>

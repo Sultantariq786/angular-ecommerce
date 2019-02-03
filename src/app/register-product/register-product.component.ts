@@ -1,7 +1,7 @@
 import { ProductsService } from './../services/products.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Observable } from 'rxjs';
+// import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-register-product',
@@ -12,8 +12,6 @@ export class RegisterProductComponent implements OnInit {
   registerProdForm: FormGroup;
 
   constructor(private productsService: ProductsService) { }
-  // products = [];
-
   products = [
     {
       product_id: this.generateId(),
@@ -82,8 +80,13 @@ export class RegisterProductComponent implements OnInit {
 
   onSubmit() {
     this.onAddProduct();
-    console.log(this.registerProdForm);
+    // console.log(this.registerProdForm);
     this.registerProdForm.reset();
   }
+
+  // menProducts() {
+  //   const menProducts = this.products.filter(product => product.product_category === 'men');
+  //   console.log(menProducts);
+  // }
 
 }
