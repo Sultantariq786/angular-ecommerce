@@ -14,6 +14,7 @@ import { KidsComponent } from './kids/kids.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { RegisterProductComponent } from './register-product/register-product.component';
+import { ProductTileComponent } from './product-tile/product-tile.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { RegisterProductComponent } from './register-product/register-product.co
     ContactUsComponent,
     PageNotFoundComponent,
     RegisterProductComponent,
+    ProductTileComponent,
   ],
   imports: [
     BrowserModule,

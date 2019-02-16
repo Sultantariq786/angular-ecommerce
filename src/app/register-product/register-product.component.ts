@@ -68,25 +68,10 @@ export class RegisterProductComponent implements OnInit {
     return Math.round(Math.random() * 10000);
   }
 
-  // private generatedName() {
-  //   // let i = Math.round(Math.random() * 10);
-  //   // let name: string[] = [
-  //   //   'Blazer', 'Suit', 'Cap', 'Hat', 'Shirt', 'Lengha', 'Sweater'
-  //   // ];
-  //   // return name[i];
-  //   // console.log(name[i]);
-  //   return 'Blazer';
-  // }
-
   onSubmit() {
     this.onAddProduct();
     // console.log(this.registerProdForm);
     this.registerProdForm.reset();
   }
-
-  // menProducts() {
-  //   const menProducts = this.products.filter(product => product.product_category === 'men');
-  //   console.log(menProducts);
-  // }
 
 }

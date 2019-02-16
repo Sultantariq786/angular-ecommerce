@@ -1,28 +1,5 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-6 col-md-3 tile" *ngFor="let product of products">
-      <a href="#" class="thumbnail">
-        <img src='{{ product.product_img }}' alt="{{ product.product_alt }}"><br>
-        <div class="product-name text-center">{{ product.product_name }}</div><br>
-        <div class="product-price text-center"> ₹.{{ product.product_price }}/-</div><br>
-      </a>
-      <div class="form-group">
-        <div class="input-group">
-          <span class="input-group-btn">
-            <button class="btn btn-info removeBtn" type="button">
-              <span class="glyphicon glyphicon-minus"></span>
-            </button></span>
-          <div class="quantityDiv text-center">{{ product.product_qty }}</div>
-          <span class="input-group-btn">
-            <button class="btn btn-info addBtn" type="button">
-              <span class="glyphicon glyphicon-plus"></span>
-            </button>
-          </span>
-        </div>
-      </div>
-      <div class="form-group">
-        <input class="form-control btn btn-warning" type="button" value="Add To Cart">
-      </div>
-    </div>
+    <app-product-tile [product]="product" *ngFor="let product of products">Product</app-product-tile>
   </div>
 </div>
