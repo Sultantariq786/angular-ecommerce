@@ -8,6 +8,7 @@ import { KidsComponent } from './kids/kids.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { RegisterProductComponent } from './register-product/register-product.component';
 import { LoginComponent } from './login/login.component';
+import { PdpComponent } from './pdp/pdp.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'kids', component: KidsComponent},
   { path: 'contact-us', component: ContactUsComponent},
   { path: 'register-product', component: RegisterProductComponent},
+  { path: 'product:id', component: PdpComponent},
   { path: '**', component: PageNotFoundComponent}
 ];
 

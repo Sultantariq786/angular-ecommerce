@@ -45,4 +45,8 @@ export class ProductTileComponent implements OnInit {
     console.log('cartTotal ' + cartTotal);
   }
 
+  onGoToPDP() {
+    console.log(this.product.product_id);
+  }
+
 }

@@ -17,6 +17,7 @@ import { RegisterProductComponent } from './register-product/register-product.co
 import { ProductTileComponent } from './product-tile/product-tile.component';
 import { LoginComponent } from './login/login.component';
 import { DdToggleDirective } from './directives/dd-toggle.directive';
+import { PdpComponent } from './pdp/pdp.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { DdToggleDirective } from './directives/dd-toggle.directive';
     ProductTileComponent,
     LoginComponent,
     DdToggleDirective,
+    PdpComponent,
   ],
   imports: [
     BrowserModule,

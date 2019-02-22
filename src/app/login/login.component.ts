@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-  login = false;
+  loggedin = false;
 
   constructor() { }
 
@@ -25,12 +25,12 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.value.userLoginData.username === 'newtechtariq@gmail.com' &&
     this.loginForm.value.userLoginData.password === 'bismillah@786') {
       // setTimeout(function() {
-        this.login = true;
+        this.loggedin = true;
       // }, 1000);
     } else {
-      this.login = false;
+      this.loggedin = false;
     }
-    console.log(this.login);
+    console.log(this.loggedin);
     this.loginForm.reset();
   }
 
