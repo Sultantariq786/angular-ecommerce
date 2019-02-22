@@ -7,18 +7,18 @@
   <div class="form-group">
     <div class="input-group">
       <span class="input-group-btn">
-        <button class="btn btn-info removeBtn" type="button">
+        <button class="btn btn-info removeBtn" type="button" (click)="onSubQty(this)">
           <span class="glyphicon glyphicon-minus"></span>
         </button></span>
       <div class="quantityDiv text-center">{{ product.product_qty }}</div>
       <span class="input-group-btn">
-        <button class="btn btn-info addBtn" type="button">
+        <button class="btn btn-info addBtn" type="button" (click)="onAddQty(this)">
           <span class="glyphicon glyphicon-plus"></span>
         </button>
       </span>
     </div>
   </div>
   <div class="form-group">
-    <input class="form-control btn btn-warning" type="button" value="Add To Cart">
+    <input class="form-control btn btn-warning" type="button" value="Add To Cart" (click)="onAddToCart(this)">
   </div>
 </div>

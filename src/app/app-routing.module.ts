@@ -7,9 +7,11 @@ import { MenComponent } from './men/men.component';
 import { KidsComponent } from './kids/kids.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { RegisterProductComponent } from './register-product/register-product.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
+  { path: 'login', component: LoginComponent},
   { path: 'women', component: WomenComponent},
   { path: 'men', component: MenComponent},
   { path: 'kids', component: KidsComponent},
