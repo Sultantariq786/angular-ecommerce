@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductTileService } from '../services/product-tile.service';
 
 @Component({
   selector: 'app-header',
@@ -6,11 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  cartCount;
 
-  constructor() { }
+  constructor(private tileService: ProductTileService) { }
 
   ngOnInit() {
+    this.updateCartCount();
+  }
 
+  updateCartCount() {
+    this.cartCount = this.tileService.cartCount;
+    console.log('header' + this.cartCount);
   }
 
 }

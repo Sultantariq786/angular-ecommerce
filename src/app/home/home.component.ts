@@ -10,9 +10,10 @@ import { ProductTileComponent } from '../product-tile/product-tile.component';
 export class HomeComponent implements OnInit, AfterViewInit {
 
   constructor(private productsService: ProductsService) { }
-  @ViewChild(ProductTileComponent) child;
+  // @ViewChild(ProductTileComponent) child;
   products: any = [ ];
   cartCount: number;
+
 
   ngOnInit() {
     // this.productsService.getProducts()
