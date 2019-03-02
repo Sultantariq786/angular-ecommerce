@@ -15,6 +15,10 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { RegisterProductComponent } from './register-product/register-product.component';
 import { ProductTileComponent } from './product-tile/product-tile.component';
+import { LoginComponent } from './login/login.component';
+import { DdToggleDirective } from './directives/dd-toggle.directive';
+import { PdpComponent } from './pdp/pdp.component';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +33,10 @@ import { ProductTileComponent } from './product-tile/product-tile.component';
     PageNotFoundComponent,
     RegisterProductComponent,
     ProductTileComponent,
+    LoginComponent,
+    DdToggleDirective,
+    PdpComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
