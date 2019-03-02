@@ -16,12 +16,12 @@ export class ProductTileComponent implements OnInit {
 
   }
 
-  onAddQty() {
+  onAddQty($event) {
     // console.log(this);
     this.product.product_qty++;
   }
 
-  onSubQty() {
+  onSubQty($event) {
     if (this.product.product_qty > 0) {
       this.product.product_qty--;
     }
@@ -41,7 +41,7 @@ export class ProductTileComponent implements OnInit {
   //   this.onDisplayCartTotal();
   // }
 
-  onGoToPDP() {
+  onGoToPDP($event) {
     console.log(this.product.product_id);
   }
 
