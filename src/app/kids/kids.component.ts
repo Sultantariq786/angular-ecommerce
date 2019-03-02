@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../services/products.service';
+import { ProductTileService } from '../services/product-tile.service';
 
 @Component({
   selector: 'app-kids',
@@ -12,14 +13,15 @@ export class KidsComponent implements OnInit {
   kidsProducts = [];
 
   ngOnInit() {
-    this.productsService.getProducts()
-    .subscribe(
-      (response: any) => {
-        this.kidsProducts = response.json().filter(product => product.product_category === 'kids');
-        console.log(this.kidsProducts);
-      }
+    // this.productsService.getProducts()
+    // .subscribe(
+    //   (response: any) => {
+    //     this.kidsProducts = response.json().filter(product => product.product_category === 'kids');
+    //     console.log(this.kidsProducts);
+    //   }
       // (error) => console.log(error)
-    );
+    // );
+    this.kidsProducts = JSON.parse(localStorage.getItem('products')).filter(product => product.product_category === 'kids');
   }
 
 }

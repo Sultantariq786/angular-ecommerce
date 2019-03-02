@@ -12,13 +12,14 @@ export class WomenComponent implements OnInit {
   womenProducts = [];
 
   ngOnInit() {
-    this.productsService.getProducts()
-    .subscribe(
-      (response: any) => {
-        this.womenProducts = response.json().filter(product => product.product_category === 'women');
-        // console.log(this.womenProducts);
-      }
-    );
+    // this.productsService.getProducts()
+    // .subscribe(
+    //   (response: any) => {
+    //     this.womenProducts = response.json().filter(product => product.product_category === 'women');
+    //     // console.log(this.womenProducts);
+    //   }
+    // );
+    this.womenProducts = JSON.parse(localStorage.getItem('products')).filter(product => product.product_category === 'women');
   }
 
 }

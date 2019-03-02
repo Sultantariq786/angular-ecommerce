@@ -1,5 +1,8 @@
 <div class="container">
   <div class="row">
+    <div class="col-md-12">
+      <input class="form-control" type="text" #query (keyup)="filter(query.value)" placeholder="Search by product name..." />
+    </div>
     <app-product-tile [product]="product" *ngFor="let product of products">Product</app-product-tile>
   </div>
 </div>
