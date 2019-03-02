@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   constructor(private productsService: ProductsService) { }
   // @ViewChild(ProductTileComponent) child;
-  products: any = [ ];
+  products: any[] = [];
   cartCount: number;
 
 
@@ -29,9 +29,17 @@ export class HomeComponent implements OnInit, AfterViewInit {
         // this.products = response.json();
         localStorage.setItem('products', JSON.stringify(response.json()));
         this.products = JSON.parse(localStorage.getItem('products'));
+        console.log(this.products);
       }
       // (error) => console.log(error)
     );
+  }
+  /*For Product Search*/
+  filter(query: string) {
+    this.products = (query && query !== '') ?
+    this.products = JSON.parse(localStorage.getItem('products')).filter(p => p.product_name.toLowerCase().includes(query.toLowerCase())) :
+    this.products = JSON.parse(localStorage.getItem('products'));
+    console.log(this.products);
   }
 
   ngAfterViewInit() {

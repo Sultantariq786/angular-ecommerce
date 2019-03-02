@@ -9,19 +9,16 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ProductTileComponent implements OnInit {
   @Input() product: any = [];
-  // cart: any[] = [];
-  // cartCount = 0;
 
   constructor(private productsService: ProductsService, private tileService: ProductTileService) { }
 
   ngOnInit() {
-    // this.cart = JSON.parse(localStorage.getItem('cart'));
+
   }
 
   onAddQty() {
     // console.log(this);
     this.product.product_qty++;
-    console.log(this.product.product_qty);
   }
 
   onSubQty() {
@@ -31,8 +28,8 @@ export class ProductTileComponent implements OnInit {
   }
 
   onAddToCart(selectedProduct) {
+    console.log('in tile Compo ' + selectedProduct);
     this.tileService.updateCart(selectedProduct);
-    console.log('p' + selectedProduct);
   }
 
   // onAddToCart() {
@@ -42,13 +39,6 @@ export class ProductTileComponent implements OnInit {
   //   this.cartCount = this.cart.length;
   //   // console.log(this.cartCount);
   //   this.onDisplayCartTotal();
-  // }
-
-  // onDisplayCartTotal() {
-  //   const cartPrices = JSON.parse(localStorage.getItem('cart')).map(cpp => cpp.product_price);
-  //   console.log('cartPrices ' + cartPrices);
-  //   const cartTotal = cartPrices.reduce((total, price) => total + price, 0);
-  //   console.log('cartTotal ' + cartTotal);
   // }
 
   onGoToPDP() {

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, AfterContentChecked } from '@angular/core';
 import { ProductTileService } from '../services/product-tile.service';
 
 @Component({
@@ -6,18 +6,21 @@ import { ProductTileService } from '../services/product-tile.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, AfterContentChecked {
   cartCount;
 
   constructor(private tileService: ProductTileService) { }
 
   ngOnInit() {
-    this.updateCartCount();
+
   }
 
   updateCartCount() {
     this.cartCount = this.tileService.cartCount;
-    console.log('header' + this.cartCount);
+  }
+
+  ngAfterContentChecked() {
+    this.updateCartCount();
   }
 
 }

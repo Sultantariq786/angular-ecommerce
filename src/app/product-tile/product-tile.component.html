@@ -12,13 +12,13 @@
         </button></span>
       <div class="quantityDiv text-center">{{ product.product_qty }}</div>
       <span class="input-group-btn">
-        <button class="btn btn-info addBtn" type="button" (click)="onAddQty(this, '45')">
+        <button class="btn btn-info addBtn" type="button" (click)="onAddQty(this)">
           <span class="glyphicon glyphicon-plus"></span>
         </button>
       </span>
     </div>
   </div>
   <div class="form-group">
-    <input class="form-control btn btn-warning" type="button" value="Add To Cart" (click)="onAddToCart(this)">
+    <input class="form-control btn btn-warning" type="button" value="Add To Cart" (click)="onAddToCart(this.product)">
   </div>
 </div>

@@ -1,3 +1,4 @@
+import { ProductsService } from './products.service';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -9,10 +10,13 @@ export class ProductTileService {
 
   constructor() { }
 
+  getCartProducts() {
+    return this.cart;
+  }
+
   updateCart(selectedProduct) {
     this.cart.push(selectedProduct);
-    console.log(this);
     this.cartCount = this.cart.length;
-    // console.log(this.cartCount);
+    console.log(this.cart);
   }
 }

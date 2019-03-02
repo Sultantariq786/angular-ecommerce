@@ -1,0 +1,17 @@
+.signupForm {
+    max-width: 500px;
+    height: 350px;
+    border: 1px solid #DFDFDE;
+    padding: 1em;
+    margin: auto;
+    background: #eaeaea;
+}
+
+.btn-success {
+    width: 100%;
+}
+
+h3 {
+    margin: 20px auto;
+    max-width: 350px;
+}

@@ -1,3 +1,4 @@
+import { SignupComponent } from './signup/signup.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { WomenComponent } from './women/women.component';
 import { HomeComponent } from './home/home.component';
@@ -13,6 +14,7 @@ import { PdpComponent } from './pdp/pdp.component';
 const routes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'login', component: LoginComponent},
+  { path: 'signup', component: SignupComponent},
   { path: 'women', component: WomenComponent},
   { path: 'men', component: MenComponent},
   { path: 'kids', component: KidsComponent},

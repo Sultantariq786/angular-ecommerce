@@ -1,5 +1,6 @@
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,7 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   loggedin = false;
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
     this.loginForm = new FormGroup({
@@ -22,15 +23,8 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.loginForm.value.userLoginData.username === 'newtechtariq@gmail.com' &&
-    this.loginForm.value.userLoginData.password === 'bismillah@786') {
-      // setTimeout(function() {
-        this.loggedin = true;
-      // }, 1000);
-    } else {
-      this.loggedin = false;
-    }
-    console.log(this.loggedin);
+    const formValue = this.loginForm.value.userLoginData;
+    this.authService.signinUser(formValue.username, formValue.password);
     this.loginForm.reset();
   }
 
