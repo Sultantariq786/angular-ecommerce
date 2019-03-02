@@ -12,14 +12,16 @@ export class MenComponent implements OnInit {
   menProducts = [];
 
   ngOnInit() {
-    this.productsService.getProducts()
-    .subscribe(
-      (response: any) => {
-        this.menProducts = response.json().filter(product => product.product_category === 'men');
-        console.log(this.menProducts);
-      }
+    // this.productsService.getProducts()
+    // .subscribe(
+    //   (response: any) => {
+    //     this.menProducts = JSON.parse(localStorage.getItem('products')).filter(product => product.product_category === 'men');
+    //     console.log(this.menProducts);
+    //   }
       // (error) => console.log(error)
-    );
+    // );
+    /*Save service call by filtering data through local storage*/
+    this.menProducts = JSON.parse(localStorage.getItem('products')).filter(product => product.product_category === 'men');
   }
 
 }

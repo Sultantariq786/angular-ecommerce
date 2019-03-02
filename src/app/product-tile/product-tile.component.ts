@@ -1,3 +1,4 @@
+import { ProductTileService } from './../services/product-tile.service';
 import { ProductsService } from './../services/products.service';
 import { Component, OnInit, Input } from '@angular/core';
 
@@ -7,12 +8,41 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./product-tile.component.css']
 })
 export class ProductTileComponent implements OnInit {
-  @Input() product = [ ];
+  @Input() product: any = [];
 
-  constructor(private productsService: ProductsService) { }
+  constructor(private productsService: ProductsService, private tileService: ProductTileService) { }
 
   ngOnInit() {
 
+  }
+
+  onAddQty() {
+    // console.log(this);
+    this.product.product_qty++;
+  }
+
+  onSubQty() {
+    if (this.product.product_qty > 0) {
+      this.product.product_qty--;
+    }
+  }
+
+  onAddToCart(selectedProduct) {
+    console.log('in tile Compo ' + selectedProduct);
+    this.tileService.updateCart(selectedProduct);
+  }
+
+  // onAddToCart() {
+  //   this.cart.push(this.product);
+  //   localStorage.setItem('cart', JSON.stringify(this.cart));
+  //   console.log(this.cart);
+  //   this.cartCount = this.cart.length;
+  //   // console.log(this.cartCount);
+  //   this.onDisplayCartTotal();
+  // }
+
+  onGoToPDP() {
+    console.log(this.product.product_id);
   }
 
 }
