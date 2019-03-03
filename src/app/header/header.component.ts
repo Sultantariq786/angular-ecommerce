@@ -8,6 +8,7 @@ import { ProductTileService } from '../services/product-tile.service';
 })
 export class HeaderComponent implements OnInit, AfterContentChecked {
   cartCount;
+  cartTotal;
 
   constructor(private tileService: ProductTileService) { }
 
@@ -15,12 +16,13 @@ export class HeaderComponent implements OnInit, AfterContentChecked {
 
   }
 
-  updateCartCount() {
+  updateCart() {
     this.cartCount = this.tileService.cartCount;
+    this.cartTotal = this.tileService.cartTotal;
   }
 
   ngAfterContentChecked() {
-    this.updateCartCount();
+    this.updateCart();
   }
 
 }
