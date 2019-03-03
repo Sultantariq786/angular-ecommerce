@@ -1,0 +1,13 @@
+.emptyCart {
+    height: 500px;
+    margin: 25px auto;
+    text-align: center;
+    width: 500px;
+    display: block;
+    color: #ff0000;
+}
+
+.emptyCart > img {
+    width: 500px;
+    height: 500px;
+}

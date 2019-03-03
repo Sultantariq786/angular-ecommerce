@@ -18,7 +18,10 @@
       </span>
     </div>
   </div>
-  <div class="form-group">
+  <div class="form-group" *ngIf="!isCart">
     <input class="form-control btn btn-warning" type="button" value="Add To Cart" (click)="onAddToCart(this.product)">
+  </div>
+  <div class="form-group" *ngIf="isCart">
+    <input class="form-control btn btn-danger" type="button" value="Remove From Cart" (click)="onRemoveFromCart(this.product)">
   </div>
 </div>
