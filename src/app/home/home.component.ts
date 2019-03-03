@@ -1,6 +1,5 @@
 import { ProductsService } from './../services/products.service';
-import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
-import { ProductTileComponent } from '../product-tile/product-tile.component';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +9,6 @@ import { ProductTileComponent } from '../product-tile/product-tile.component';
 export class HomeComponent implements OnInit, AfterViewInit {
 
   constructor(private productsService: ProductsService) { }
-  // @ViewChild(ProductTileComponent) child;
   products: any[] = [];
   cartCount: number;
 

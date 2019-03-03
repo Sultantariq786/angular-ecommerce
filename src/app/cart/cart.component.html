@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row">
+    <app-product-tile [product]="product" [isCart]="true" *ngFor="let product of cartProducts">Product</app-product-tile>
+  </div>
+  <div class="row">
+    <div class="col-xs-21 emptyCart" *ngIf="cartProducts.length === 0">
+        <h2>It feels so light...</h2>
+        <img src="https://www.pngarts.com/files/1/Baby-Crying-Transparent-Images.png" alt="Empty Cart Image">
+    </div>
+  </div>
+</div>

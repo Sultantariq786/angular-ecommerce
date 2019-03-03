@@ -1,6 +1,7 @@
 import { ProductTileService } from './../services/product-tile.service';
 import { ProductsService } from './../services/products.service';
 import { Component, OnInit, Input } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-product-tile',
@@ -9,8 +10,13 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ProductTileComponent implements OnInit {
   @Input() product: any = [];
+  @Input() isCart;
 
-  constructor(private productsService: ProductsService, private tileService: ProductTileService) { }
+  constructor(
+    private productsService: ProductsService,
+    private tileService: ProductTileService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
 
@@ -32,6 +38,11 @@ export class ProductTileComponent implements OnInit {
     this.tileService.updateCart(selectedProduct);
   }
 
+  onRemoveFromCart(selectedProduct) {
+    console.log('in tile Compo ' + selectedProduct);
+    this.tileService.removeCart(selectedProduct);
+  }
+
   // onAddToCart() {
   //   this.cart.push(this.product);
   //   localStorage.setItem('cart', JSON.stringify(this.cart));
@@ -42,6 +53,7 @@ export class ProductTileComponent implements OnInit {
   // }
 
   onGoToPDP($event) {
+    this.router.navigate(['/', 'product/:id']);
     console.log(this.product.product_id);
   }
 
