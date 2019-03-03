@@ -10,17 +10,19 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { RegisterProductComponent } from './register-product/register-product.component';
 import { LoginComponent } from './login/login.component';
 import { PdpComponent } from './pdp/pdp.component';
+import { CartComponent } from './cart/cart.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent},
+  { path: '', component: HomeComponent, pathMatch: 'full'},
   { path: 'login', component: LoginComponent},
   { path: 'signup', component: SignupComponent},
   { path: 'women', component: WomenComponent},
   { path: 'men', component: MenComponent},
   { path: 'kids', component: KidsComponent},
+  { path: 'product/:id', component: PdpComponent},
+  { path: 'cart', component: CartComponent},
   { path: 'contact-us', component: ContactUsComponent},
   { path: 'register-product', component: RegisterProductComponent},
-  { path: 'product:id', component: PdpComponent},
   { path: '**', component: PageNotFoundComponent}
 ];
 
