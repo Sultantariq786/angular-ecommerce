@@ -7,6 +7,7 @@ import { Injectable } from '@angular/core';
 export class ProductTileService {
   cart: any[] = [];
   cartCount = 0;
+  cartTotal: any = 0;
 
   constructor() {console.log(this.cartCount); }
 
@@ -19,8 +20,9 @@ export class ProductTileService {
     localStorage.setItem('cart', JSON.stringify(this.cart));
     this.cart = JSON.parse(localStorage.getItem('cart'));
     this.cartCount = this.cart.length;
-    console.log('In tile Serv =' + this.cart);
-    console.log(this.cartCount);
+    // console.log('In tile Serv =' + this.cart);
+    // console.log(this.cartCount);
+    this.cartTotal = this.getCartTotal();
   }
 
   removeCart(selectedProduct) {
@@ -29,5 +31,19 @@ export class ProductTileService {
     localStorage.setItem('cart', JSON.stringify(this.cart));
     this.cart = JSON.parse(localStorage.getItem('cart'));
     this.cartCount = this.cart.length;
+    this.cartTotal = this.getCartTotal();
+  }
+
+  getCartTotal() {
+    // console.log(this.cart[0].product_id);
+    const TotalCartPrice = this.cart
+    .map(product => product.product_price * product.product_qty)
+    .reduce((total, addedProductPrice) => total + addedProductPrice, 0);
+    console.log(TotalCartPrice);
+    return TotalCartPrice;
+
+    // const cTotal = this.cart.reduce(function(total, ) {
+    //   return total + prod_price;
+    // }, 0);
   }
 }
