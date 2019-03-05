@@ -11,12 +11,13 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class ProductTileComponent implements OnInit {
   @Input() product: any = [];
   @Input() isCart;
+  prodId;
 
   constructor(
     private productsService: ProductsService,
     private tileService: ProductTileService,
     private router: Router,
-    private activatedRoute: ActivatedRoute) { }
+    private route: ActivatedRoute) { }
 
   ngOnInit() {
 
@@ -53,7 +54,8 @@ export class ProductTileComponent implements OnInit {
   // }
 
   onGoToPDP($event) {
-    this.router.navigate(['/', 'product/:id']);
+    this.prodId = this.product.product_id;
+    this.router.navigate(['/', 'product', this.prodId]);
     console.log(this.product.product_id);
   }
 
