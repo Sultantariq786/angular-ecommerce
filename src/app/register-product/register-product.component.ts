@@ -17,7 +17,7 @@ export class RegisterProductComponent implements OnInit {
       product_id: 1,
       product_category: 'women',
       product_name: 'Ladies Suit',
-      product_desc: 'This is a Cotton Suit for Ladies',
+      product_desc: 'This is a Cotton Suit for Ladies. Stylish office where for daily office use.  ',
       product_img: 'https://5.imimg.com/data5/SR/JT/MY-12033534/fancy-ladies-suits-500x500-500x500.jpg',
       product_alt: 'Ladies Suit Image',
       product_qty: 0,
