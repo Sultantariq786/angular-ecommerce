@@ -21,6 +21,7 @@ export class PdpComponent implements OnInit {
   getProduct() {
     const prodId = +this.route.snapshot.paramMap.get('id');
     this.product = JSON.parse(localStorage.getItem('products')).filter(product => product.product_id === prodId)[0];
+    // console.log(this.product.product_id);
   }
 
 }

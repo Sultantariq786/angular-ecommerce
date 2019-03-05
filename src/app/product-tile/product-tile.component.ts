@@ -12,6 +12,7 @@ export class ProductTileComponent implements OnInit {
   @Input() product: any = [];
   @Input() isCart;
   prodId;
+  productCat;
 
   constructor(
     private productsService: ProductsService,
@@ -55,6 +56,7 @@ export class ProductTileComponent implements OnInit {
 
   onGoToPDP($event) {
     this.prodId = this.product.product_id;
+    this.productCat = this.product.product_category;
     this.router.navigate(['/', 'product', this.prodId]);
     console.log(this.product.product_id);
   }
