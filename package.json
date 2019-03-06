@@ -28,7 +28,10 @@
     "firebase": "^5.8.5",
     "rxjs": "^6.0.0",
     "rxjs-compat": "^6.3.3",
-    "zone.js": "^0.8.26"
+    "zone.js": "^0.8.26",
+    "express" : "*",
+    "body-parser" : "*",
+    "bcrypt" : "^0.8.5"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.6.8",
