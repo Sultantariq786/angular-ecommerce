@@ -1,5 +1,6 @@
-import { Component, OnInit, AfterViewInit, AfterContentChecked } from '@angular/core';
-import { ProductTileService } from '../services/product-tile.service';
+import { Component, OnInit, AfterContentChecked } from '@angular/core';
+import { CartService } from '../services/cart.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +11,7 @@ export class HeaderComponent implements OnInit, AfterContentChecked {
   cartCount;
   cartTotal;
 
-  constructor(private tileService: ProductTileService) { }
+  constructor(private tileService: CartService, public authService: AuthService) { }
 
   ngOnInit() {
 
@@ -23,6 +24,10 @@ export class HeaderComponent implements OnInit, AfterContentChecked {
 
   ngAfterContentChecked() {
     this.updateCart();
+  }
+
+  logoff() {
+    this.authService.logout();
   }
 
 }

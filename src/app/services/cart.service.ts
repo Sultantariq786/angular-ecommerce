@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class ProductTileService {
+export class CartService {
   cart: any[] = [];
   cartCount = 0;
   cartTotal: any = 0;
@@ -16,11 +16,15 @@ export class ProductTileService {
   }
 
   updateCart(selectedProduct) {
+    // const isMature = ages.filter(age => age >= 18);
+    // const alreadyInCart = this.cart.filter (cp => cp.product_id === selectedProduct.product_id);
+    // console.log('ainc ' + alreadyInCart);
+    // console.log('sp ' + selectedProduct.product_id);
     this.cart.push(selectedProduct);
     localStorage.setItem('cart', JSON.stringify(this.cart));
     this.cart = JSON.parse(localStorage.getItem('cart'));
     this.cartCount = this.cart.length;
-    // console.log('In tile Serv =' + this.cart);
+    // console.log(this.cart);
     // console.log(this.cartCount);
     this.cartTotal = this.getCartTotal();
   }
