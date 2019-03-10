@@ -12,14 +12,18 @@ export class ProductsService {
   constructor(private http: Http, private authService: AuthService) { }
 
   getProducts() {
-    console.log('Products Fetched');
-    return this.http.get(this.url + '?auth=' + this.token);
+    if (this.token) {
+      console.log('Products Fetched');
+      return this.http.get(this.url + '?auth=' + this.token);
+    }
   }
 
   addProducts( products: any[] ) {
-    console.log('Products Pushed');
-    // return this.http.post(this.url, products);
-    return this.http.put(this.url + '?auth=' + this.token, products);
+    if (this.token) {
+      console.log('Products Pushed');
+      // return this.http.post(this.url, products);
+      return this.http.put(this.url + '?auth=' + this.token, products);
+    }
   }
 
   // getKidProducts() {
