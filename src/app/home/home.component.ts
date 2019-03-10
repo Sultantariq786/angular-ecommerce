@@ -1,5 +1,6 @@
 import { ProductsService } from './../services/products.service';
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -8,10 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private productsService: ProductsService) { }
+  constructor(private productsService: ProductsService, private authService: AuthService) { }
   products: any[] = [];
   cartCount: number;
-
+  user = this.authService.username;
 
   ngOnInit() {
     // this.productsService.getProducts()
@@ -21,16 +22,20 @@ export class HomeComponent implements OnInit {
     // );
 
     /*Setting product response to localstorage and fetching from there on page*/
-    this.productsService.getProducts()
-    .subscribe(
-      (response: any) => {
-        // this.products = response.json();
-        localStorage.setItem('products', JSON.stringify(response.json()));
-        this.products = JSON.parse(localStorage.getItem('products'));
-        // console.log(this.products);
-      }
-      // (error) => console.log(error)
-    );
+
+    if (this.user) {
+      this.productsService.getProducts()
+      .subscribe(
+        (response: any) => {
+          // this.products = response.json();
+          localStorage.setItem('products', JSON.stringify(response.json()));
+          this.products = JSON.parse(localStorage.getItem('products'));
+          // console.log(this.products);
+        }
+        // (error) => console.log(error)
+      );
+    }
+
   }
   /*For Product Search*/
   filter(query: string) {

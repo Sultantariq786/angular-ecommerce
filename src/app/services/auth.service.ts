@@ -7,7 +7,7 @@ import * as firebase from 'firebase';
 })
 export class AuthService {
   token: string;
-  username ;
+  username;
 
   constructor(private router: Router) { }
 
@@ -44,11 +44,14 @@ export class AuthService {
   }
 
   getToken() {
-    firebase.auth().currentUser.getIdToken()
-    .then(
-      (token: string) => this.token = token
-    );
-    return this.token;
+    const user = firebase.auth().currentUser;
+    if (user) {
+      firebase.auth().currentUser.getIdToken()
+      .then(
+        (token: string) => this.token = token
+      );
+      return this.token;
+    }
   }
 
   isAuthenticated() {
@@ -56,6 +59,7 @@ export class AuthService {
   }
 
   logout() {
+    localStorage.removeItem('products');
     firebase.auth().signOut();
     this.token = null;
     this.router.navigate(['/login']);

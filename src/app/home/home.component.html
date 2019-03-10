@@ -1,8 +1,12 @@
 <div class="container">
-  <div class="row">
+  <div class="row" *ngIf="user">
     <div class="col-md-12">
       <input class="form-control" type="text" #query (keyup)="filter(query.value)" placeholder="Search by product name..." />
     </div>
     <app-product-tile [product]="product" *ngFor="let product of products">Product</app-product-tile>
+  </div>
+
+  <div class="row" *ngIf="!user">
+    <h3 class="text-center">Please Signup or Login to see the products :)</h3>
   </div>
 </div>
