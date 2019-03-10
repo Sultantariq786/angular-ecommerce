@@ -1,4 +1,4 @@
-import { ProductTileService } from './../services/product-tile.service';
+import { CartService } from '../services/cart.service';
 import { Component, OnInit, AfterContentChecked } from '@angular/core';
 
 @Component({
@@ -10,15 +10,15 @@ export class CartComponent implements OnInit, AfterContentChecked {
   cartProducts: any[] = [];
   cartTotal: any = 0;
 
-  constructor(private tileService: ProductTileService) { }
+  constructor(private cartService: CartService) { }
 
   ngOnInit() {
     // console.log(this.cartProducts);
   }
 
   ngAfterContentChecked() {
-    this.cartProducts = this.tileService.getCartProducts();
-    this.cartTotal = this.tileService.getCartTotal();
+    this.cartProducts = this.cartService.getCartProducts();
+    this.cartTotal = this.cartService.getCartTotal();
   }
 
 }
