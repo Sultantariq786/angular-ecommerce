@@ -2,6 +2,10 @@
     background: #ff0000;
 }
 
+.cartTotal {
+    color: #efde19 !important;
+}
+
 /* ul.dropdown-menu > li {
     text-align: right;
 } */

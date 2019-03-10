@@ -1,6 +1,7 @@
-import { ProductTileService } from './../services/product-tile.service';
-import { ProductsService } from './../services/products.service';
+import { CartService } from '../services/cart.service';
+// import { ProductsService } from './../services/products.service';
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-tile',
@@ -9,8 +10,15 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ProductTileComponent implements OnInit {
   @Input() product: any = [];
+  @Input() isCart;
+  prodId;
+  productCat;
 
-  constructor(private productsService: ProductsService, private tileService: ProductTileService) { }
+  constructor(
+   // private productsService: ProductsService,
+    private cartService: CartService,
+    private router: Router,
+    ) { }
 
   ngOnInit() {
 
@@ -29,19 +37,18 @@ export class ProductTileComponent implements OnInit {
 
   onAddToCart(selectedProduct) {
     console.log('in tile Compo ' + selectedProduct);
-    this.tileService.updateCart(selectedProduct);
+    this.cartService.updateCart(selectedProduct);
   }
 
-  // onAddToCart() {
-  //   this.cart.push(this.product);
-  //   localStorage.setItem('cart', JSON.stringify(this.cart));
-  //   console.log(this.cart);
-  //   this.cartCount = this.cart.length;
-  //   // console.log(this.cartCount);
-  //   this.onDisplayCartTotal();
-  // }
+  onRemoveFromCart(selectedProduct) {
+    console.log('in tile Compo ' + selectedProduct);
+    this.cartService.removeCart(selectedProduct);
+  }
 
   onGoToPDP($event) {
+    this.prodId = this.product.product_id;
+    this.productCat = this.product.product_category;
+    this.router.navigate(['/' + this.productCat + '/product/' + this.prodId]);
     console.log(this.product.product_id);
   }
 

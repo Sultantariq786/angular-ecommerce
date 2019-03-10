@@ -19,6 +19,7 @@ import { LoginComponent } from './login/login.component';
 import { DdToggleDirective } from './directives/dd-toggle.directive';
 import { PdpComponent } from './pdp/pdp.component';
 import { SignupComponent } from './signup/signup.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { SignupComponent } from './signup/signup.component';
     DdToggleDirective,
     PdpComponent,
     SignupComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,

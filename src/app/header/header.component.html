@@ -33,15 +33,16 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><a href="javascript:void(0)">Contact Us</a></li>
-          <li><a routerLink="/signup">Sign Up</a></li>
-          <li><a href="javascript:void(0)">Cart <span class="badge">{{ cartCount }}</span></a></li>
+          <li *ngIf="!authService.isAuthenticated()"><a routerLink="/signup">Sign Up</a></li>
+          <li><a class="cartTotal" routerLink="/cart">Cart Total: {{ cartTotal }}</a></li>
+          <li><a routerLink="/cart">Cart <span class="badge">{{ cartCount }}</span></a></li>
           <li class="dropdown" appDdToggle>
-            <a href="javascript:void(0)" class="glyphicon glyphicon-user dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="caret"></span></a>
+            <a href="javascript:void(0)" class="glyphicon glyphicon-user dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <ng-container *ngIf="authService.isAuthenticated()"> {{ authService.username }} </ng-container><span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a [routerLink]="['/register-product']">Add Product</a></li>
+              <li *ngIf="authService.isAuthenticated()"><a [routerLink]="['/register-product']">Add Product</a></li>
               <li role="separator" class="divider"></li>
-              <li><a href="/login">Login</a></li>
-              <li><a href="javascript:void(0)">Logout</a></li>
+              <li *ngIf="!authService.isAuthenticated()"><a href="/login">Login</a></li>
+              <li *ngIf="authService.isAuthenticated()"><a href="javascript:void(0)" (click)="logoff()">Logout</a></li>
             </ul>
           </li>
         </ul>
