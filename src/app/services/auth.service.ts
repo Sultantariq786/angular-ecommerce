@@ -59,7 +59,7 @@ export class AuthService {
   }
 
   logout() {
-    localStorage.removeItem('products');
+    localStorage.clear();
     firebase.auth().signOut();
     this.token = null;
     this.router.navigate(['/login']);
