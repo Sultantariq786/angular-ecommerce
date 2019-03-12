@@ -13,7 +13,22 @@ export class CartComponent implements OnInit, AfterContentChecked {
   constructor(private cartService: CartService) { }
 
   ngOnInit() {
-    // console.log(this.cartProducts);
+    this.cartProducts = this.cartService.getCartProducts();
+  }
+
+  removeFromCart(selectedProduct) {
+    this.cartService.removeCart(selectedProduct);
+  }
+
+  onAddQty(selectedProduct) {
+    console.log(selectedProduct);
+    selectedProduct.product_qty++;
+  }
+
+  onSubQty(selectedProduct) {
+    if (selectedProduct.product_qty > 0) {
+      selectedProduct.product_qty--;
+    }
   }
 
   ngAfterContentChecked() {

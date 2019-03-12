@@ -11,15 +11,15 @@ export class HeaderComponent implements OnInit, AfterContentChecked {
   cartCount;
   cartTotal;
 
-  constructor(private tileService: CartService, public authService: AuthService) { }
+  constructor(private cartService: CartService, public authService: AuthService) { }
 
   ngOnInit() {
 
   }
 
   updateCart() {
-    this.cartCount = this.tileService.cartCount;
-    this.cartTotal = this.tileService.cartTotal;
+    this.cartCount = this.cartService.cartCount;
+    this.cartTotal = this.cartService.cartTotal;
   }
 
   ngAfterContentChecked() {
