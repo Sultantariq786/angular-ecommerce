@@ -113,6 +113,46 @@ export class RegisterProductComponent implements OnInit {
       product_qty: 0,
       product_price: 1550,
     },
+    {
+      product_id: 11,
+      product_category: 'kids',
+      product_name: 'Kids T-Shirt',
+      product_desc: 'This is a Cotton Blended T-Shirt for your kid',
+      product_img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLYwOYX1otPDGgOZdmyrZDah_9OJBXP6esyBATpaMxAoiYt3eQ',
+      product_alt: 'Kids T-Shirt Image',
+      product_qty: 0,
+      product_price: 675,
+    },
+    {
+      product_id: 12,
+      product_category: 'kids',
+      product_name: 'Kids Toy',
+      product_desc: 'This is a Musical Toy for your kid',
+      product_img: 'https://images-na.ssl-images-amazon.com/images/I/611b2p-6T5L._SX425_.jpg',
+      product_alt: 'Kids Toy Image',
+      product_qty: 0,
+      product_price: 1585,
+    },
+    {
+      product_id: 13,
+      product_category: 'women',
+      product_name: 'Purse',
+      product_desc: 'This is a leather bag for women',
+      product_img: 'https://images-na.ssl-images-amazon.com/images/I/61EUkpIK5iL._UY395_.jpg',
+      product_alt: 'Purse Image',
+      product_qty: 0,
+      product_price: 1585,
+    },
+    {
+      product_id: 14,
+      product_category: 'men',
+      product_name: 'Wallet',
+      product_desc: 'This is a leather wallet for men',
+      product_img: 'https://images-na.ssl-images-amazon.com/images/I/71YyWOWb91L._SY355_.jpg',
+      product_alt: 'Wallet Image',
+      product_qty: 0,
+      product_price: 2075,
+    }
   ];
 
   ngOnInit() {

@@ -11,3 +11,15 @@
     width: 500px;
     height: 500px;
 }
+
+.thumbnail a>img, .thumbnail>img {
+    height: 100px;
+}
+
+.close {
+    top: -18px;
+}
+
+.price {
+    margin-right: 35px;
+}

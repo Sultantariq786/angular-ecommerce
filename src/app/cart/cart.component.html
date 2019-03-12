@@ -1,11 +1,48 @@
 <div class="container">
   <div class="row">
-    <app-product-tile [product]="product" [isCart]="true" *ngFor="let product of cartProducts">Product</app-product-tile>
+    <!-- <app-product-tile [product]="product" [isCart]="true" *ngFor="let product of cartProducts">Product</app-product-tile> -->
+    <div class="col-xs-6" *ngFor="let product of cartProducts">
+      <div class="panel panel-warning">
+        <div class="panel-heading">
+          <h3 class="panel-title">{{ product.product_name }} <span class="pull-right price">{{ product.product_price }}/-</span></h3>
+          <a href="javascript:void(0)" class="glyphicon glyphicon-remove close" (click)="removeFromCart(this.product)"></a>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-xs-3">
+              <a class="thumbnail" href="javascript:void(0)"><img src="{{ product.product_img }}" alt="{{ product.product_alt }}"></a>
+            </div>
+            <div class="col-xs-9">
+              This is the description of the product as it is described. If you want to read more please copy and paste
+              the text here.
+              <div class="row">
+                <div class="col-xs-12" style="bottom: -55px;">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <span class="input-group-btn">
+                        <button class="btn btn-info removeBtn" type="button" (click)="onSubQty(this.product)">
+                          <span class="glyphicon glyphicon-minus"></span>
+                        </button></span>
+                      <div class="quantityDiv text-center">{{ product.product_qty }}</div>
+                      <span class="input-group-btn">
+                        <button class="btn btn-info addBtn" type="button" (click)="onAddQty(this.product)">
+                          <span class="glyphicon glyphicon-plus"></span>
+                        </button>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="row">
     <div class="col-xs-21 emptyCart" *ngIf="cartProducts.length === 0">
-        <h2>It feels so light...</h2>
-        <img src="https://www.pngarts.com/files/1/Baby-Crying-Transparent-Images.png" alt="Empty Cart Image">
+      <h2>It feels so light...</h2>
+      <img src="https://www.pngarts.com/files/1/Baby-Crying-Transparent-Images.png" alt="Empty Cart Image">
     </div>
   </div>
 </div>

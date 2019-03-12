@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
     // );
 
     /*Setting product response to localstorage and fetching from there on page*/
-
+    console.log(this.user);
     if (this.user) {
       this.productsService.getProducts()
       .subscribe(
