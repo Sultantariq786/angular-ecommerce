@@ -4,6 +4,7 @@
     padding: 1em;
     margin: auto;
     background: #f1f1f1;
+    border-radius: 25px;
 }
 
 .btn-primary {
@@ -13,4 +14,8 @@
 h3 {
     margin: 20px auto;
     max-width: 350px;
+}
+
+a.btn.btn-link {
+    margin: 11px -11px 0;
 }

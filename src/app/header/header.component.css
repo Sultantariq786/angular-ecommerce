@@ -1,9 +1,14 @@
 .badge {
     background: #ff0000;
+    margin-top: -25px;
 }
 
 .cartTotal {
     color: #efde19 !important;
+}
+
+a.glyphicon.glyphicon-shopping-cart {
+    font-size: 20px;
 }
 
 /* ul.dropdown-menu > li {
